@@ -44,7 +44,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://kingsleyaham.github.io/todo/)
+- Solution URL: [todo app](https://kingsleyaham.github.io/todo/)
 
 ## My process
 
