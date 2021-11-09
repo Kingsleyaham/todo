@@ -34,13 +34,13 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop dark theme](./design/desktop-dark.png)
+![desktop dark theme](./desktop-dark.png)
 
-![desktop light theme](./design/desktop-light.png)
+![desktop light theme](./desktop-light.png)
 
-![mobile dark theme](./design/mobile-dark.png)
+![mobile dark theme](./mobile-dark.png)
 
-![mobile light theme](./design/mobile-light.png)
+![mobile light theme](./mobile-light.png)
 
 ### Links
 
