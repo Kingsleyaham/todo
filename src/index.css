@@ -47,7 +47,7 @@ code {
 .app {
   background: var(--image);
   background-repeat: no-repeat;
-  background-size: 100% 45vh;
+  background-size: cover auto;
 }
 .container {
   width: 40%;
@@ -253,6 +253,12 @@ footer p {
 }
 
 @media screen and (max-width: 480px) {
+  body.light {
+    --mobile-image: url("./img/bg-mobile-light.jpg");
+  }
+  body.dark {
+    --mobile-image: url("./img/bg-mobile-dark.jpg");
+  }
   .container {
     padding: 20px 0px;
   }
@@ -260,8 +266,7 @@ footer p {
     font-size: 0.85rem;
   }
   .app {
-    background: url(./img/bg-mobile-light.jpg) no-repeat;
-    background-size: 100% 40vh;
+    background: var(--mobile-image) no-repeat;
   }
   .add-todo input[type="text"] {
     width: 87%;

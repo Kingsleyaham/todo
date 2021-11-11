@@ -6,6 +6,7 @@ const Form = (props) => {
   }
 
   function handleSubmit(e) {
+    e.preventDefault();
     if (inputText !== "") {
       props.addTask(inputText);
       setInputText("");
@@ -23,7 +24,7 @@ const Form = (props) => {
   //   }
 
   return (
-    <div className="add-todo">
+    <form className="add-todo" onSubmit={handleSubmit}>
       <label className="checkbox-wrapper">
         <input type="checkbox" id="newTodo" onChange={handleSubmit} />
         <span className="checkmark"></span>
@@ -38,7 +39,7 @@ const Form = (props) => {
         onChange={handleChange}
         // onKeyPress={checkSubmit}
       />
-    </div>
+    </form>
   );
 };
 
