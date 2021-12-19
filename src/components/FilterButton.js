@@ -1,4 +1,16 @@
 const FilterButton = (props) => {
+
+  let btns = document.querySelectorAll('.btn');
+
+  Array.from(btns).forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      let selected = document.getElementsByClassName('active');
+       selected[0].className = selected[0].className.replace(" active", "");
+       btn.className += ' active';
+    })
+  });
+
   return (
     <div>
       <div className="todo-footer">
@@ -7,9 +19,9 @@ const FilterButton = (props) => {
         </div>
         <div className="status-wrapper">
           <ul onClick={props.statusHandler} id="status">
-            <li id="active">All</li>
-            <li>Active</li>
-            <li>Completed</li>
+            <li className="btn active">All</li>
+            <li className="btn">Active</li>
+            <li className="btn">Completed</li>
           </ul>
         </div>
         <div>

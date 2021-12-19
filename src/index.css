@@ -241,8 +241,8 @@ footer p {
   text-decoration: line-through;
 }
 
-#active {
-  color: hsl(220, 98%, 61%);
+.active {
+  color: hsl(220, 98%, 61%) !important;
 }
 
 @media screen and (max-width: 1000px) {
