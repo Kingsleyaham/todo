@@ -60,4 +60,3 @@ Users should be able to:
 
 - Frontend Mentor - [@Kingsleyaham](https://www.frontendmentor.io/profile/Kingsleyaham)
 - Facebook - [@Kingsleyaham](https://www.facebook.com/kingsley.aham.1)
-- Github - [@kingsleyprojects](https://github.com/kingsleyprojects)
