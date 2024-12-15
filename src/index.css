@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --dark: hsl(235, 21%, 11%);
+  --white: hsl(233, 29%, 95%);
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+}
+
+body.light {
+  --background-color: var(--white);
+  --text-color: hsl(235, 19%, 35%);
+  --image: url("./assets/img/bg-desktop-light.jpg");
+  --secondary-bg: hsl(0, 0%, 98%);
+  --secondary-color: hsl(236, 9%, 61%);
+  --shadow-color: hsl(236, 9%, 61%);
+  --status-color: var(--secondary-color);
+  --completed-task: var(--secondary-color);
+  --border-color: hsl(236, 33%, 92%);
+}
+
+body.dark {
+  --background-color: var(--dark);
+  --text-color: hsl(234, 39%, 85%);
+  --image: url("./assets/img/bg-desktop-dark.jpg");
+  --secondary-bg: hsl(235, 24%, 19%);
+  --secondary-color: hsl(233, 14%, 35%);
+  --shadow-color: var(--dark);
+  --border-color: hsl(237, 14%, 26%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans";
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app {
+  background: var(--image);
+  background-repeat: no-repeat;
+  background-size: cover auto;
+}
+
+.container {
+  width: 40%;
+  margin: 0px auto;
+  padding: 40px 0px;
+}
+
+.header {
+  padding-top: 30px;
+}
+
+.header>div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header>div h1 {
+  color: #fff;
+  font-size: 42px;
+  letter-spacing: 15px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.add-todo {
+  background-color: var(--secondary-bg);
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin: 25px 0;
+  box-shadow: 0px 0px 5px var(--shadow-color);
+}
+
+.add-todo input[type="text"] {
+  width: 91%;
+  padding: 3px 0px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background-color: var(--secondary-bg);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.checkbox-wrapper {
+  position: relative;
+  width: 8%;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-wrapper .checkmark {
+  position: absolute;
+  top: auto;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.checkbox-wrapper .checkmark::after {
+  position: absolute;
+  content: "";
+  left: 8px;
+  top: 8px;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  border-width: 0 3px 3px 0;
+  opacity: 1;
+}
+
+.checkbox-wrapper input:checked~.checkmark {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-radius: 50%;
+  opacity: 1;
+  border: none;
+}
+
+.checkbox-wrapper input:checked~.checkmark::after {
+  opacity: 1;
+  left: 6px;
+  top: 7px;
+  width: 23px;
+  height: 18px;
+  background: url(./assets/img/icon-check.svg) no-repeat;
+  border-radius: 0;
+}
+
+.todo-list {
+  background-color: var(--secondary-bg);
+  border-radius: 5px;
+  margin: 25px 0;
+  box-shadow: 0px 0px 5px var(--shadow-color);
+  cursor: pointer;
+}
+
+.todo-list .todo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  border-spacing: border-box;
+  padding: 22px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.todo-list p {
+  width: 87%;
+  padding-top: 5px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+#selected-todo {
+  color: hsl(234, 39%, 85%);
+  text-decoration: line-through;
+}
+
+.todo-list img {
+  /* visibility: hidden; */
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.todo-footer {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 0.95rem;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--secondary-color);
+}
+
+.todo-footer div span {
+  color: var(--secondary-color);
+}
+
+.status-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+
+.status-wrapper ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px 5px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.todo-status {
+  display: none;
+  width: 100%;
+  background-color: var(--secondary-bg);
+  box-shadow: 0px 0px 3px var(--shadow-color);
+  box-sizing: border-box;
+  text-align: center;
+  padding: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 15px 0px;
+  color: var(--secondary-color);
+}
+
+.todo-status ul {
+  margin: 0;
+  padding: 0;
+}
+
+.todo-status ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px 5px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 20px 0;
+  color: var(--secondary-color);
+}
+
+.todo-list .completed>p {
+  color: hsl(233, 11%, 84%);
+  text-decoration: line-through;
+}
+
+.active {
+  color: hsl(220, 98%, 61%) !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 90%;
+    padding: 30px 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body.light {
+    --mobile-image: url("./assets/img/bg-mobile-light.jpg");
+  }
+
+  body.dark {
+    --mobile-image: url("./assets/img/bg-mobile-dark.jpg");
+  }
+
+  .container {
+    padding: 20px 0px;
+  }
+
+  body {
+    font-size: 0.85rem;
+  }
+
+  .app {
+    background: var(--mobile-image) no-repeat;
+  }
+
+  .add-todo input[type="text"] {
+    width: 87%;
+    font-size: 0.85rem;
+    padding-top: 7px;
+  }
+
+  .header>div h1 {
+    font-size: 35px;
+    padding-bottom: 0;
+  }
+
+  .todo-list p {
+    width: 82%;
+    padding-left: 6px;
+  }
+
+  .add-todo {
+    padding: 15px 12px 15px;
+  }
+
+  .checkbox-wrapper .checkmark {
+    height: 22px;
+    width: 22px;
+  }
+
+  .todo-list .todo {
+    padding: 22px 15px;
+  }
+
+  .todo-list img {
+    visibility: visible;
+    width: 15px;
+    height: 15px;
+    padding-top: 5px;
+  }
+
+  .todo-footer div ul {
+    display: none;
+  }
+
+  .todo-status {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    font-size: 0.75rem;
+  }
+
+  .add-todo input[type="text"] {
+    font-size: 0.8rem;
+  }
+}
